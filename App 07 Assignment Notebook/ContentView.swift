@@ -9,11 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var assignmentItems = [AssignmentItem(course: "Math", description: "Do Worksheet", dueDate: Date()), AssignmentItem(course: "History", description: "Read pages", dueDate: Date()), AssignmentItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
-
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-        
+        NavigationView {
+            List {
+                ForEach (assignmentItems) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.course)
+                                .font(.headline)
+                            Text(item.description)
+                        }
+                        Spacer()
+                        Text(item.dueDate, style: .date)
+                    }
+                }
+            }
+            .navigationBarTitle("Assignment Notebook", displayMode: .inline)
+        }
     }
 }
 
