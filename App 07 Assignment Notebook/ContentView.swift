@@ -24,8 +24,15 @@ struct ContentView: View {
                         Text(item.dueDate, style: .date)
                     }
                 }
+                .onMove(perform: { indices, newOffset in
+                    assignmentItems.move(fromOffsets: indices, toOffset: newOffset)
+                })
+                .onDelete(perform: { indexSet in
+                    assignmentItems.remove(atOffsets: indexSet)
+                })
             }
             .navigationBarTitle("Assignment Notebook", displayMode: .inline)
+            .navigationBarItems(leading: EditButton())
         }
     }
 }
@@ -36,8 +43,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct AssignmentItem: Identifiable
-{
+struct AssignmentItem: Identifiable {
     var id = UUID()
     var course = String()
     var description = String()
