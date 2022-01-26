@@ -1,19 +1,16 @@
-//
 //  ContentView.swift
-//  App 07 Assignment Notebook
+//  To Do List
 //
-//  Created by Student on 1/18/22.
+//  Created by Dylan Koehler on 1/10/22.
 //
-
 import SwiftUI
 
 struct ContentView: View {
-    @State private var assignmentItems = [AssignmentItem(course: "Math", description: "Do Worksheet", dueDate: Date()), AssignmentItem(course: "History", description: "Read pages", dueDate: Date()), AssignmentItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
-    
+    @State private var notebookItems = [ListItem(course: "Math", description: "Do Worksheet", dueDate: Date()), ListItem(course: "History", description: "Read pages", dueDate: Date()), ListItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
     var body: some View {
         NavigationView {
             List {
-                ForEach (assignmentItems) { item in
+                ForEach (notebookItems) { item in
                     HStack {
                         VStack(alignment: .leading) {
                             Text(item.course)
@@ -25,13 +22,13 @@ struct ContentView: View {
                     }
                 }
                 .onMove(perform: { indices, newOffset in
-                    assignmentItems.move(fromOffsets: indices, toOffset: newOffset)
+                    notebookItems.move(fromOffsets: indices, toOffset: newOffset)
                 })
                 .onDelete(perform: { indexSet in
-                    assignmentItems.remove(atOffsets: indexSet)
+                    notebookItems.remove(atOffsets: indexSet)
                 })
             }
-            .navigationBarTitle("Assignment Notebook", displayMode: .inline)
+            .navigationBarTitle("To Do List", displayMode: .inline)
             .navigationBarItems(leading: EditButton())
         }
     }
@@ -43,7 +40,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct AssignmentItem: Identifiable {
+struct ListItem: Identifiable {
     var id = UUID()
     var course = String()
     var description = String()
