@@ -12,6 +12,7 @@
 		3F5022AB2797217800521112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5022AA2797217800521112 /* Assets.xcassets */; };
 		3F5022AE2797217800521112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F5022AD2797217800521112 /* Preview Assets.xcassets */; };
 		3F5022B62799C7F000521112 /* Assignment Notebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5022B52799C7F000521112 /* Assignment Notebook.swift */; };
+		3FB23F8A27A3001C0063DC31 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB23F8927A3001C0063DC31 /* AddItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3F5022AD2797217800521112 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F5022AF2797217800521112 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5022B52799C7F000521112 /* Assignment Notebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assignment Notebook.swift"; sourceTree = "<group>"; };
+		3FB23F8927A3001C0063DC31 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				3F5022A62797216E00521112 /* App_07_Assignment_NotebookApp.swift */,
 				3F5022A82797216E00521112 /* ContentView.swift */,
 				3F5022B52799C7F000521112 /* Assignment Notebook.swift */,
+				3FB23F8927A3001C0063DC31 /* AddItemView.swift */,
 				3F5022AA2797217800521112 /* Assets.xcassets */,
 				3F5022AF2797217800521112 /* Info.plist */,
 				3F5022AC2797217800521112 /* Preview Content */,
@@ -144,6 +147,7 @@
 				3F5022B62799C7F000521112 /* Assignment Notebook.swift in Sources */,
 				3F5022A92797216E00521112 /* ContentView.swift in Sources */,
 				3F5022A72797216E00521112 /* App_07_Assignment_NotebookApp.swift in Sources */,
+				3FB23F8A27A3001C0063DC31 /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
