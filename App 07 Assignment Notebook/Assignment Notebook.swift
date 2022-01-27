@@ -5,8 +5,8 @@
 //  Created by Dylan Koehler on 1/20/22.
 //
 
-//import Foundation
+import Foundation
 
-//class assignmentItem: ObservableObject {
-//    @Published var items = [AssignmentItem(course: "Math", description: "Do Worksheet", dueDate: Date()), AssignmentItem(course: "History", description: "Read pages", dueDate: Date()), AssignmentItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
-//}
+class Notebook: ObservableObject {
+    @Published var items = [ListItem(course: "Math", description: "Do Worksheet", dueDate: Date()), ListItem(course: "History", description: "Read pages", dueDate: Date()), ListItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
+}

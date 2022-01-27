@@ -1,16 +1,16 @@
 //  ContentView.swift
-//  To Do List
+//  App 07 Assignment Notebook
 //
-//  Created by Dylan Koehler on 1/10/22.
+//  Created by Dylan Koehler on 1/20/22.
 //
 import SwiftUI
 
 struct ContentView: View {
-    @State private var notebookItems = [ListItem(course: "Math", description: "Do Worksheet", dueDate: Date()), ListItem(course: "History", description: "Read pages", dueDate: Date()), ListItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
+    @ObservedObject var notebook = Notebook()
     var body: some View {
         NavigationView {
             List {
-                ForEach (notebookItems) { item in
+                ForEach (notebook.items) { item in
                     HStack {
                         VStack(alignment: .leading) {
                             Text(item.course)
@@ -22,10 +22,10 @@ struct ContentView: View {
                     }
                 }
                 .onMove(perform: { indices, newOffset in
-                    notebookItems.move(fromOffsets: indices, toOffset: newOffset)
+                    notebook.items.move(fromOffsets: indices, toOffset: newOffset)
                 })
                 .onDelete(perform: { indexSet in
-                    notebookItems.remove(atOffsets: indexSet)
+                    notebook.items.remove(atOffsets: indexSet)
                 })
             }
             .navigationBarTitle("To Do List", displayMode: .inline)
