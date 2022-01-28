@@ -8,5 +8,23 @@
 import Foundation
 
 class Notebook: ObservableObject {
-    @Published var items = [ListItem(course: "Math", description: "Do Worksheet", dueDate: Date()), ListItem(course: "History", description: "Read pages", dueDate: Date()), ListItem(course: "Science", description: "Mastering Physics", dueDate: Date())]
+    @Published var items : [ListItem] {
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(items) {
+                UserDefaults.standard.set(encoded, forKey: "data")
+            }
+        }
+    }
+    init() {
+        if let items = UserDefaults.standard.data(forKey: "data") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([ListItem].self, from: items) {
+                self.items = decoded
+                return
+            }
+        }
+        items = []
+    }
 }
+
